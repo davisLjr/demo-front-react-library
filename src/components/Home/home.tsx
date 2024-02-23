@@ -9,9 +9,6 @@ const HomeOne = () => (
     <div className="box-home container">
       <div className="content-hero">
         <div className="content-title">
-          {/* <h1>
-            Crea aplicaciones React accesibles <strong>con velocidad</strong>
-          </h1> */}
           <h1>
             Crea aplicaciones React <strong>con velocidad</strong>
           </h1>
@@ -24,7 +21,7 @@ const HomeOne = () => (
         </div>
         <div className="content-buttom">
           <Link
-            href="https://github.com/gcba/react-obelisco"
+            href="https://github.com/gcba/Obelisco"
             className="btn btn-primary btn-lg btn-icon"
           >
             <i className="bx bxl-github"></i>
