@@ -18,6 +18,18 @@ const HeaderLayout = () => {
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
+
+    // Ajustar dinámicamente el tabindex de los elementos según si el drawer está abierto o cerrado
+    const elements = document.querySelectorAll(".drawer [tabindex]");
+    elements.forEach((element) => {
+      if (drawerOpen) {
+        // Al abrir el drawer, eliminar el tabindex de los elementos no visibles
+        element.removeAttribute("tabindex");
+      } else {
+        // Al cerrar el drawer, restaurar el tabindex a los elementos visibles
+        element.setAttribute("tabindex", "0");
+      }
+    });
   };
 
   const closeDrawer = () => {
@@ -79,13 +91,21 @@ const HeaderLayout = () => {
 
               <Divisor />
 
-              <NavigationHorizontal items={navItems} />
+              {drawerOpen && (
+                <>
+                  <NavigationHorizontal items={navItems} />
+                  <h3 className="navbar-sections-title mt-4">Componentes</h3>
+                  <Divisor />
+                  <NavLayout items={componentsPages} />
+                </>
+              )}
+              {/* <NavigationHorizontal items={navItems} />
 
               <h3 className="navbar-sections-title mt-4">Componentes</h3>
 
               <Divisor />
 
-              <NavLayout items={componentsPages} />
+              <NavLayout items={componentsPages} /> */}
             </div>
           </div>
           {/*Desktop */}
