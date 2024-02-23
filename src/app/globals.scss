@@ -118,6 +118,11 @@ hr {
 //Estilos para la naveggacion vertical con animacion segun scroll
 .box-scrollspy {
   margin: 0 auto;
+
+  @media screen and (max-width: 978px) {
+    display: none;
+  }
+
   .App-navigation {
     display: flex;
     flex-direction: column;
